@@ -35,11 +35,11 @@ jobs:
         KERNEL: 3.4
       run: |
         if [ $KERNEL = "4.4" ] ; then
-        git clone --depth=1 https://github.com/MeIsReallyBa/padavan-4.4.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/MeIsReallyBa/padavan-4.4.git /opt/padavan-1
         else
         git clone --depth=1 https://github.com/sanjiaoban/padavan-1.git /opt/padavan-1
         fi
-        cd /opt/rt-n56u/toolchain-mipsel
+        cd /opt/padavan-1/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
@@ -47,7 +47,7 @@ jobs:
         TNAME: PSG712
         KERNEL: 3.4
       run: |
-        cd /opt/rt-n56u/trunk
+        cd /opt/padavan-1/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
