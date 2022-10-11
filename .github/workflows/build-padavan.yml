@@ -48,8 +48,7 @@ jobs:
       run: |
         cd /opt/rt-n56u/trunk
         sudo ./clear_tree
-        sudo ./clean_sources
-        sudo ./build_toolchain
+        sudo ./build_firmware
         sudo mv -f images/*.trx /opt/images/
     - name : Upload packages
       uses: actions/upload-artifact@master
