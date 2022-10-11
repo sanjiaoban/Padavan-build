@@ -38,8 +38,8 @@ jobs:
         git clone --depth=1 https://github.com/sanjiaoban/rt-n56u.git /opt/rt-n56u
         fi
         cd /opt/rt-n56u/toolchain-mipsel
-        sudo./clean_sources
-        sudo./build_toolchain
+        sudo ./clean_sources
+        sudo ./build_toolchain
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
